@@ -194,7 +194,7 @@
          05 ws-jr-prog-average pic z,zz9.99.
 
        01 ws-total-dff.
-         05 filler pic x(28) value "GRADUATE TOTAL BUDGET DIFF: ".
+         05 filler pic x(31) value "NONGRADUATE TOTAL BUDGET DIFF: ".
          05 ws-show-total-diff pic ---,--9.99.
 
       *  This section is solely for the calculation purpose, variable
@@ -442,6 +442,10 @@
 
            write output-line from ws-total-line2
              after advancing ws-one line.
+
+           move ws-diff-total to ws-show-total-diff.
+           write output-line from ws-total-dff
+           after advancing ws-two lines.
       *    write output-line from ws-total-line2.
 
       *Close files
